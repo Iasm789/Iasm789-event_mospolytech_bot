@@ -9,7 +9,23 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 # Загружаем переменные окружения из .env файла
-load_dotenv()
+# Ищем .env в разных местах (для локальной и railway окружений)
+current_dir = Path(__file__).parent
+parent_dir = current_dir.parent
+
+# Проверяем разные варианты пути к .env
+env_paths = [
+    current_dir / ".env",      # chat_bot_events/.env (Railway)
+    parent_dir / ".env",        # project_root/.env (локально)
+]
+
+for env_path in env_paths:
+    if env_path.exists():
+        load_dotenv(env_path, override=True)
+        break
+else:
+    # Если .env не найден, пытаемся загрузить из переменных окружения
+    load_dotenv(override=True)
 
 
 class Config:
