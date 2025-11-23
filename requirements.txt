@@ -1,0 +1,27 @@
+aiogram==3.22.0
+APScheduler==3.10.4
+python-dateutil==2.9.0.post0
+pytz==2025.1
+icalendar==5.0.12
+python-dotenv==1.0.1
+pytest==8.3.3
+black==24.10.0
+ruff==0.6.9
+
+# Для парсинга Telegram каналов
+requests==2.31.0
+beautifulsoup4==4.12.3
+aiofiles==23.2.1
+
+# Для API и работы с БД
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+SQLAlchemy==2.0.35
+asyncpg==0.29.0
+alembic==1.13.2
+aioredis==2.0.1
+httpx==0.27.2
+
+# Для работы с Hugging Face моделями
+transformers==4.36.2
+torch==2.1.2
